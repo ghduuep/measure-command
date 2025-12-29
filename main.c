@@ -13,6 +13,8 @@
 #define NS_PER_HOUR (60ULL * NS_PER_MIN)
 #define NS_PER_DAY (24ULL * NS_PER_HOUR)
 
+#define LABEL_WIDTH 17
+
 int main(int argc, char* argv[]) {
   struct timespec start, end;
   clock_gettime(CLOCK_MONOTONIC, &start);
@@ -55,17 +57,17 @@ int main(int argc, char* argv[]) {
     double total_seconds = (double)nanoseconds / NS_PER_SEC;
     double total_ms = (double)nanoseconds / NS_PER_MS;
 
-    printf("Days: %lu\n", days);
-    printf("Hours: %lu\n", hours);
-    printf("Minutes: %lu\n", minutes);
-    printf("Seconds: %lu\n", seconds);
-    printf("Milliseconds: %lu\n", milliseconds);
-    printf("Ticks: %lu\n", ticks);
-    printf("TotalDays: %.15f\n", total_days);
-    printf("TotalHours: %.15f\n", total_hours);
-    printf("TotalMinutes: %.15f\n", total_minutes);
-    printf("TotalSeconds: %.15f\n", total_seconds);
-    printf("TotalMilliseconds: %.15f\n", total_ms);
+    printf("Days              : %lu\n", days);
+    printf("Hours             : %lu\n", hours);
+    printf("Minutes           : %lu\n", minutes);
+    printf("Seconds           : %lu\n", seconds);
+    printf("Milliseconds      : %lu\n", milliseconds);
+    printf("Ticks             : %lu\n", ticks);
+    printf("TotalDays         : %.15g\n", total_days);
+    printf("TotalHours        : %.15g\n", total_hours);
+    printf("TotalMinutes      : %.15g\n", total_minutes);
+    printf("TotalSeconds      : %.15g\n", total_seconds);
+    printf("TotalMilliseconds : %.15g\n", total_ms);
     
   } else {
     perror("fork failed");
